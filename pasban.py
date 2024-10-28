@@ -7,7 +7,13 @@ import google.generativeai as genai
 
 
 # Set the API key directly
-genai.configure(api_key=st.secrets['genai_api_key'])
+
+
+# Load secrets
+genai_api_key = st.secrets["genai_api_key"]
+
+# Use the secret
+genai.configure(api_key=genai_api_key)
 
 new_chat_id = f'{time.time()}'
 MODEL_ROLE = 'ai'
